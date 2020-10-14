@@ -60,4 +60,3 @@ with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19
           article_part_7_selected.format(tests_done_yesterday),
           article_part_8_selected.format(confirmed_cases_today),
           article_part_9_selected.format(confirmed_cases_today))
-

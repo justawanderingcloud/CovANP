@@ -59,4 +59,3 @@ with open("zakladni-prehled.json", "r") as dataset:
           article_part_7_selected.format(tests_done_yesterday),
           article_part_8_selected.format(confirmed_cases_today),
           article_part_9_selected.format(confirmed_cases_today))
-
