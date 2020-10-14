@@ -4,8 +4,10 @@ import random
 import datetime
 import locale
 
+# set locale to czech to get the name of months right
 locale.setlocale(locale.LC_TIME, "czech")
 
+# parts for the final article
 article_part_1 = ["Koronavirová situace je taková, že ke dni {}",
                   "Ke dni {}"]
 article_part_2 = ["bylo provedeno {} testů.",
@@ -25,6 +27,7 @@ article_part_8 = ["Během včerejšího dne se potvrdilo {} nových případů n
 article_part_9 = ["Dnes se nakazilo {} lidí koronavirovou infekcí.",
                   "Během dnešního dne je {} nových nakažených nemocí covid-19"]
 
+# random parts of article templates selection
 article_part_1_selected = random.sample(article_part_1, 1)[0]
 article_part_2_selected = random.sample(article_part_2, 1)[0]
 article_part_3_selected = random.sample(article_part_3, 1)[0]
@@ -35,6 +38,7 @@ article_part_7_selected = random.sample(article_part_7, 1)[0]
 article_part_8_selected = random.sample(article_part_8, 1)[0]
 article_part_9_selected = random.sample(article_part_9, 1)[0]
 
+# download file, process and print
 with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/zakladni-prehled.json") as dataset:
     covid_data = json.loads(dataset.read())
 
