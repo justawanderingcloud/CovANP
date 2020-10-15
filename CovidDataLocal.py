@@ -65,6 +65,5 @@ with open("zakladni-prehled.json", "r") as dataset:
 
     covid_article = "".join(covid_article_parts)
 
-
     with open("text-output.txt", "a+") as file_object:
         file_object.write(str(covid_article))
