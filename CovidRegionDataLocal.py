@@ -8,7 +8,7 @@ import pandas as pd
 def covid_region_article_build(region_source):
     data = pd.read_csv(region_source)
 
-    last_date = data[data["datum"] == "2020-10-06"]
+    last_date = data[data["datum"] == "2020-10-10"]
     str_cz = last_date[last_date["kraj_nuts_kod"] == "CZ020"]
 
     str_cz_processed = str_cz.replace(["CZ020", "CZ0201", "CZ0202", "CZ0203", "CZ0204", "CZ0205", "CZ0206", "CZ0207",
@@ -18,6 +18,8 @@ def covid_region_article_build(region_source):
                                        "Okres Praha-východ", "Okres Praha-západ", "Okres Příbram", "Okres Rakovník"])
 
     # str_cz_processed.to_csv(r"output.csv", index=False)
+
+    str_cz_sorted_total_infected = str_cz_processed["kumulativni_pocet_nakazenych"].sum()
 
     str_cz_sorted_infected = str_cz_processed.sort_values(["kumulativni_pocet_nakazenych"], ascending=False)
     str_cz_sorted_cured = str_cz_processed.sort_values(["kumulativni_pocet_vylecenych"], ascending=False)
@@ -38,5 +40,6 @@ def covid_region_article_build(region_source):
     template = "Nejhůře na tom je {} s {} nemocnými."
     template2 = "Nejlépe na tom je {} s {} nemocnými."
 
+    print("Celkovy pocet nakazenych v STC kraji je", str_cz_sorted_total_infected)
     print(template.format(str_cz_sorted_most_infected_list[0], str_cz_sorted_most_infected_list[1]))
     print(template2.format(str_cz_sorted_least_infected_list[0], str_cz_sorted_least_infected_list[1]))
