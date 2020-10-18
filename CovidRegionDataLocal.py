@@ -41,11 +41,19 @@ def covid_region_article_build(region_source):
     str_cz_sorted_most_infected_list = str_cz_sorted_most_infected.values.tolist()[0]
     str_cz_sorted_least_infected_list = str_cz_sorted_least_infected.values.tolist()[0]
 
-    template = "Nejhůře na tom je {} s {} nemocnými."
-    template2 = "Nejlépe na tom je {} s {} nemocnými."
+    str_cz_sorted_most_cured_list = str_cz_sorted_most_cured.values.tolist()[0]
+    str_cz_sorted_least_cured_list = str_cz_sorted_least_cured.values.tolist()[0]
+
+    template1_1 = "Nejhůře na tom je {} s {} nemocnými."
+    template1_2 = "Nejlépe na tom je {} s {} nemocnými."
+    template2_1 = "V okrese {} se z covidu vylecilo nejvice pacientu z kraje: {} lidi."
+    template2_2 = "Naopak v okrese {} se vylecilo nejmene pacientu, tedy {}."
 
     print("Celkovy pocet nakazenych v STC kraji je", str_cz_sorted_total_infected)
     print("Celkovy pocet vylecenych v STC kraji je", str_cz_sorted_total_cured)
     print("Celkovy pocet zemrelych v STC kraji je", str_cz_sorted_total_dead)
-    print(template.format(str_cz_sorted_most_infected_list[0], str_cz_sorted_most_infected_list[1]))
-    print(template2.format(str_cz_sorted_least_infected_list[0], str_cz_sorted_least_infected_list[1]))
+
+    print(template1_1.format(*str_cz_sorted_most_infected_list))
+    print(template1_2.format(*str_cz_sorted_least_infected_list))
+    print(template2_1.format(*str_cz_sorted_most_cured_list))
+    print(template2_2.format(*str_cz_sorted_least_cured_list))

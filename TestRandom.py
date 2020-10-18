@@ -1,7 +1,8 @@
 import random
 
 
-def select():
+def select(howmany):
     test_list = ["first", "second", "third"]
-    random_selected = random.sample(test_list, 1)[0]
-    return random_selected
+    random_selected = random.sample(test_list, howmany) #[0]
+    print(random_selected)
+    # return random_selected

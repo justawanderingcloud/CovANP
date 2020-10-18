@@ -1,3 +1,3 @@
 from TestRandom import select
 
-print(select())
+print(select(1))

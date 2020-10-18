@@ -69,7 +69,8 @@ def covid_general_article_build(general_source):
                                article_part_9_selected.format(confirmed_cases_today)]
 
         covid_article = "".join(covid_article_parts)
-        print(str(covid_article))
+        return covid_article
+        # print(str(covid_article))
 
         # with open("text-output.txt", "a+") as file_object:
         #     file_object.write(str(covid_article))
