@@ -2,10 +2,9 @@
 # also check if filename exists, if yes, then rename into backuped-datetime and then download
 # with csv downloads entire page for some reason
 
-from requests import get
-
+import requests
 
 def GetCovidData(url, output):
-    with open(output, "wb") as file:
-        response = get(url)
-        file.write(response.content)
+    resp = requests.get(url)
+    with open(output, "w") as output:
+        output.write(resp.text)
