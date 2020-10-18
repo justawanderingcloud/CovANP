@@ -1,3 +1,5 @@
+# needs to be renamed to CovidDataRemote as DownloadScript does something different
+
 import urllib.request
 import json
 import random
