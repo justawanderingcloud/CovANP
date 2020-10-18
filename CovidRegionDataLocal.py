@@ -45,5 +45,7 @@ def covid_region_article_build(region_source):
     template2 = "Nejlépe na tom je {} s {} nemocnými."
 
     print("Celkovy pocet nakazenych v STC kraji je", str_cz_sorted_total_infected)
+    print("Celkovy pocet vylecenych v STC kraji je", str_cz_sorted_total_cured)
+    print("Celkovy pocet zemrelych v STC kraji je", str_cz_sorted_total_dead)
     print(template.format(str_cz_sorted_most_infected_list[0], str_cz_sorted_most_infected_list[1]))
     print(template2.format(str_cz_sorted_least_infected_list[0], str_cz_sorted_least_infected_list[1]))
