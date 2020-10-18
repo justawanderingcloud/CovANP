@@ -1,4 +1,5 @@
 # exception handling for NameError
+# parametrize for input region
 
 import pandas as pd
 
@@ -20,19 +21,22 @@ def covid_region_article_build(region_source):
     # str_cz_processed.to_csv(r"output.csv", index=False)
 
     str_cz_sorted_total_infected = str_cz_processed["kumulativni_pocet_nakazenych"].sum()
+    str_cz_sorted_total_cured = str_cz_processed["kumulativni_pocet_vylecenych"].sum()
+    str_cz_sorted_total_dead = str_cz_processed["kumulativni_pocet_umrti"].sum()
 
     str_cz_sorted_infected = str_cz_processed.sort_values(["kumulativni_pocet_nakazenych"], ascending=False)
     str_cz_sorted_cured = str_cz_processed.sort_values(["kumulativni_pocet_vylecenych"], ascending=False)
     str_cz_sorted_dead = str_cz_processed.sort_values(["kumulativni_pocet_umrti"], ascending=False)
 
-    str_cz_sorted_least_infected = str_cz_processed.sort_values(["kumulativni_pocet_nakazenych"], ascending=True)
-    str_cz_sorted_least_cured = str_cz_processed.sort_values(["kumulativni_pocet_vylecenych"], ascending=True)
-    str_cz_sorted_least_dead = str_cz_processed.sort_values(["kumulativni_pocet_umrti"], ascending=True)
 
     str_cz_sorted_most_infected = str_cz_sorted_infected.iloc[[0], [2, 3]]
-    str_cz_sorted_least_infected = str_cz_sorted_least_infected.iloc[[0], [2, 3]]
-    #print(str_cz_sorted_cured.iloc[[0], [2, 4]])
-    #print(str_cz_sorted_dead.iloc[[0], [2, 5]])
+    str_cz_sorted_least_infected = str_cz_sorted_infected.iloc[[-1], [2, 3]]
+
+    str_cz_sorted_most_cured = str_cz_sorted_cured.iloc[[0], [2, 4]]
+    str_cz_sorted_least_cured = str_cz_sorted_cured.iloc[[-1], [2, 4]]
+
+    str_cz_sorted_most_dead = str_cz_sorted_dead.iloc[[0], [2, 5]]
+    str_cz_sorted_least_dead = str_cz_sorted_dead.iloc[[-1], [2, 5]]
 
     str_cz_sorted_most_infected_list = str_cz_sorted_most_infected.values.tolist()[0]
     str_cz_sorted_least_infected_list = str_cz_sorted_least_infected.values.tolist()[0]
