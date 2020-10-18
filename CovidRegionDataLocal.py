@@ -3,6 +3,7 @@
 
 import pandas as pd
 import random
+import datetime
 
 # pd.set_option("display.max_rows", None, "display.max_columns", None)
 
@@ -72,6 +73,10 @@ def covid_region_article_build(region_source):
     template_most_dead_selected = random.sample(template_most_dead, 1)[0]
     template_least_dead_selected = random.sample(template_least_dead, 1)[0]
 
+    newest_date = data["datum"].iloc[-1]
+    newest_date_processed = datetime.datetime.strptime(newest_date, "%Y-%m-%d").date()
+    newest_date_str = newest_date_processed.strftime("%d. %b %Y")
+    epilogue = "Nejnovější data hygieniků k " + str(newest_date_str) + " hovoří o následujícím: "
     stc_cz_total_infected_article = "Ve Středočeském kraji je v současné době " + str(str_cz_sorted_total_infected) + " nakažených lidí nemocí covid-19. "
     stc_cz_total_cured_article = "Dosud se vyléčilo " + str(str_cz_sorted_total_cured) + " pacientů. "
     stc_cz_total_dead_article = "Celkový počet obětí nemoci covid-19 je " + str(str_cz_sorted_total_dead) + " pacientů. "
@@ -83,7 +88,7 @@ def covid_region_article_build(region_source):
     stc_cz_most_dead_article = template_most_dead_selected.format(*str_cz_sorted_most_dead_list)
     stc_cz_least_dead_article = template_least_dead_selected.format(*str_cz_sorted_least_dead_list)
 
-    stc_covid_regional_article_parts = [stc_cz_total_infected_article, stc_cz_total_cured_article,
+    stc_covid_regional_article_parts = [epilogue, stc_cz_total_infected_article, stc_cz_total_cured_article,
                                         stc_cz_total_dead_article, stc_cz_most_infected_article,
                                         stc_cz_least_infected_article, stc_cz_most_cured_article,
                                         stc_cz_least_cured_article, stc_cz_most_dead_article,
