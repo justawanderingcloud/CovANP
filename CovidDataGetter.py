@@ -4,6 +4,7 @@
 
 import requests
 
+
 def GetCovidData(url, output):
     resp = requests.get(url)
     with open(output, "w") as output:
