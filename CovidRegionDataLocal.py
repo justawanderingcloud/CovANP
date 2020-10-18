@@ -29,7 +29,6 @@ def covid_region_article_build(region_source):
     str_cz_sorted_cured = str_cz_processed.sort_values(["kumulativni_pocet_vylecenych"], ascending=False)
     str_cz_sorted_dead = str_cz_processed.sort_values(["kumulativni_pocet_umrti"], ascending=False)
 
-
     str_cz_sorted_most_infected = str_cz_sorted_infected.iloc[[0], [2, 3]]
     str_cz_sorted_least_infected = str_cz_sorted_infected.iloc[[-1], [2, 3]]
 
