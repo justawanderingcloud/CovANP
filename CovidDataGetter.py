@@ -11,5 +11,6 @@ def get_covid_data_json(url, output):
     with open(output, "w") as output:
         output.write(resp.text)
 
+
 def get_covid_data_csv(url, output):
     urllib.request.urlretrieve(url, output)
