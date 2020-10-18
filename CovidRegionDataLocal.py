@@ -14,9 +14,10 @@ def covid_region_article_build(region_source):
 
     str_cz_processed = str_cz.replace(["CZ020", "CZ0201", "CZ0202", "CZ0203", "CZ0204", "CZ0205", "CZ0206", "CZ0207",
                                        "CZ0208", "CZ0209", "CZ020A", "CZ020B", "CZ020C"],
-                                      ["Stredocesky kraj", "Okres Benešov", "Okres Beroun", "Okres Kladno", "Okres Kolín",
-                                       "Okres Kutná Hora", "Okres Mělník", "Okres Mladá Boleslav", "Okres Nymburk",
-                                       "Okres Praha-východ", "Okres Praha-západ", "Okres Příbram", "Okres Rakovník"])
+                                      ["Stredocesky kraj", "Okres Benešov", "Okres Beroun", "Okres Kladno",
+                                       "Okres Kolín", "Okres Kutná Hora", "Okres Mělník", "Okres Mladá Boleslav",
+                                       "Okres Nymburk", "Okres Praha-východ", "Okres Praha-západ", "Okres Příbram",
+                                       "Okres Rakovník"])
 
     # str_cz_processed.to_csv(r"output.csv", index=False)
 
