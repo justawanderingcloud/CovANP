@@ -72,7 +72,7 @@ def covid_region_article_build(region_source):
     template_most_dead_selected = random.sample(template_most_dead, 1)[0]
     template_least_dead_selected = random.sample(template_least_dead, 1)[0]
 
-    stc_cz_total_infected_article = "Ve Středočeském kraji se v současné době " + str(str_cz_sorted_total_infected) + " nakažených lidí nemocí covid-19. "
+    stc_cz_total_infected_article = "Ve Středočeském kraji je v současné době " + str(str_cz_sorted_total_infected) + " nakažených lidí nemocí covid-19. "
     stc_cz_total_cured_article = "Dosud se vyléčilo " + str(str_cz_sorted_total_cured) + " pacientů. "
     stc_cz_total_dead_article = "Celkový počet obětí nemoci covid-19 je " + str(str_cz_sorted_total_dead) + " pacientů. "
 
