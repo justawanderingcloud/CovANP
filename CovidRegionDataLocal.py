@@ -37,4 +37,4 @@ template = "Nejhůře na tom je {} s {} nemocnými."
 template2 = "Nejlépe na tom je {} s {} nemocnými."
 
 print(template.format(str_cz_sorted_most_infected_list[0], str_cz_sorted_most_infected_list[1]))
-print(template.format(str_cz_sorted_least_infected_list[0], str_cz_sorted_least_infected_list[1]))
+print(template2.format(str_cz_sorted_least_infected_list[0], str_cz_sorted_least_infected_list[1]))
