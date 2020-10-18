@@ -13,7 +13,7 @@ str_cz_processed = str_cz.replace(["CZ020", "CZ0201", "CZ0202", "CZ0203", "CZ020
                                    "Okres Kutná Hora", "Okres Mělník", "Okres Mladá Boleslav", "Okres Nymburk",
                                    "Okres Praha-východ", "Okres Praha-západ", "Okres Příbram", "Okres Rakovník"])
 
-str_cz_processed.to_csv(r"output.csv", index=False)
+# str_cz_processed.to_csv(r"output.csv", index=False)
 
 str_cz_sorted_infected = str_cz_processed.sort_values(["kumulativni_pocet_nakazenych"], ascending=False)
 str_cz_sorted_cured = str_cz_processed.sort_values(["kumulativni_pocet_vylecenych"], ascending=False)
@@ -22,8 +22,6 @@ str_cz_sorted_dead = str_cz_processed.sort_values(["kumulativni_pocet_umrti"], a
 str_cz_sorted_least_infected = str_cz_processed.sort_values(["kumulativni_pocet_nakazenych"], ascending=True)
 str_cz_sorted_least_cured = str_cz_processed.sort_values(["kumulativni_pocet_vylecenych"], ascending=True)
 str_cz_sorted_least_dead = str_cz_processed.sort_values(["kumulativni_pocet_umrti"], ascending=True)
-
-# print(str_cz_sorted)
 
 str_cz_sorted_most_infected = str_cz_sorted_infected.iloc[[0], [2, 3]]
 str_cz_sorted_least_infected = str_cz_sorted_least_infected.iloc[[0], [2, 3]]
