@@ -9,7 +9,7 @@ import pandas as pd
 def covid_region_article_build(region_source):
     data = pd.read_csv(region_source)
 
-    last_date = data[data["datum"] == "2020-10-10"]
+    last_date = data[data["datum"] == data["datum"].iloc[-1]]
     str_cz = last_date[last_date["kraj_nuts_kod"] == "CZ020"]
 
     str_cz_processed = str_cz.replace(["CZ020", "CZ0201", "CZ0202", "CZ0203", "CZ0204", "CZ0205", "CZ0206", "CZ0207",
