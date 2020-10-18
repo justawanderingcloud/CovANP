@@ -7,4 +7,4 @@ It downloads official data from the Ministry of Health and produces articles bas
 
 ##### Using the CovANP tool
 
-Just run Infobuild.py with desired parameters.
+Just run ArticleBuild.py.
