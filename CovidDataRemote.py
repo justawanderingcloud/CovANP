@@ -1,4 +1,4 @@
-# needs to be renamed to CovidDataRemote as DownloadScript does something different
+# deprecated
 
 import urllib.request
 import json
