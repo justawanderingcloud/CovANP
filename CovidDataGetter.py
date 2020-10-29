@@ -6,10 +6,16 @@ import urllib.request
 
 
 def get_covid_data_json(url, output):
-    resp = requests.get(url)
-    with open(output, "w") as output:
-        output.write(resp.text)
+    try:
+        resp = requests.get(url)
+        with open(output, "w") as output:
+            output.write(resp.text)
+    except ConnectionError as e:
+        print(e)
 
 
 def get_covid_data_csv(url, output):
-    urllib.request.urlretrieve(url, output)
+    try:
+        urllib.request.urlretrieve(url, output)
+    except ConnectionError as e:
+        print(e)
