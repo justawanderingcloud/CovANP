@@ -5,8 +5,6 @@ import pandas as pd
 import random
 import datetime
 
-# pd.set_option("display.max_rows", None, "display.max_columns", None)
-
 
 def covid_region_article_build(region_source):
     data = pd.read_csv(region_source)
@@ -58,7 +56,7 @@ def covid_region_article_build(region_source):
     template_least_infected = ["Nejlépe na tom je okres {} s {} nemocnými. ",
                                "Naopak nejlépe se daří okresu {}, kde je pouze {} nemocných. "]
     template_most_cured = ["V okrese {} se z nemoci covid-19 vyléčilo nejvíce pacientů z kraje, a sice  {} lidí. ",
-                           "Nejvíce vyléčených zaznameni hygienici v okrese {}, kde je takových pacientů {} ."]
+                           "Nejvíce vyléčených zaznameni hygienici v okrese {}, kde je takových pacientů {}. "]
     template_least_cured = ["Dosud se nejméně pacientů vyléčilo na okrese {}, nemoci se zbavilo pouze {} nemocných. ",
                             "Okres {} má v tuto chvíli nejméně vyléčených, a sice {} pacientů. "]
     template_most_dead = ["Na nemoc covid-19 v okrese {} zemřelo nejvíce lidí: {} nemocných. ",
